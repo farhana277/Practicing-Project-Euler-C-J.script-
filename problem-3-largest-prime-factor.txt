@@ -1,0 +1,19 @@
+** start of script.js **
+
+function largestPrimeFactor(number) {
+    let i = 2;  
+  
+    while (i <= number) {
+        if (number % i === 0) {
+            number = number / i; 
+        } else {
+            i++; 
+        }
+    }
+  return i;
+}
+
+largestPrimeFactor(13195);
+
+** end of script.js **
+
