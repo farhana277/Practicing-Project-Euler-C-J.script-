@@ -1,11 +1,11 @@
 # Practicing-Project-Euler--C-J.script-
-Project Euler Solutions in C
+Project Euler Solutions in Java Script without using any built-in methods.
 
-This is where I share my solutions to Project Euler problems, written in the C programming language. I’m working through these challenges to sharpen my problem-solving skills, improve my logical thinking, and get better at algorithms.
+This is where I share my solutions to Project Euler problems, written in the J.Script programming language. I’m working through these challenges to sharpen my problem-solving skills, improve my logical thinking, and get better at algorithms.
 
 About This Project
 
-Language: C
+Language: J.Script
 
 Goal: Practice problem-solving and algorithmic thinking
 
@@ -14,7 +14,7 @@ Updates: I try to add new solutions almost daily
 How to Use
 
 Each problem has its own separate file to keep things neat.
-If you want to try running one:
+Yo can use the same logic in C and run this from your folder's cmd:
 
 Compile the code:
 
