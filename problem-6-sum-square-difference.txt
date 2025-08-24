@@ -1,0 +1,29 @@
+** start of script.js **
+
+function sumSquareDifference(n) {
+
+  function sqrOfSum(n){
+  let sum1=0;
+  for(let i=1;i<=n;i++){
+      sum1+=i;
+  }
+  return sum1*sum1;
+  }
+
+ function sumOfSqr(n){
+  let sum2=0;
+  for(let i=1;i<=n;i++){
+      sum2+=i*i;
+  }
+  return sum2;
+  }
+  let a= sumOfSqr(n);
+  let b= sqrOfSum(n);
+  
+  return a>b?a-b:b-a;
+}
+
+sumSquareDifference(100);
+
+** end of script.js **
+
