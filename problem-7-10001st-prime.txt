@@ -1,0 +1,30 @@
+** start of script.js **
+
+function nthPrime(n) {
+
+//Checking Whether the number is Prime;
+function isPrime(num){
+if(num<2) return false;
+for(let i=2;i*i<=num;i++){
+  if(num%i === 0) return false;
+}
+return true;
+}
+
+//Adding to the list and returning the nth prime number.
+ let primes = [];
+ let num=2;
+ while(primes.length < n){
+   if (isPrime(num)){
+     primes[primes.length]= num;  //primes.push(num);
+    }
+   num++;
+ }
+ return primes[primes.length-1];
+}
+
+
+nthPrime(10001);
+
+** end of script.js **
+
