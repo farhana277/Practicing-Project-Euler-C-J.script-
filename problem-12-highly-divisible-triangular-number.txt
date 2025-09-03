@@ -1,0 +1,28 @@
+** start of script.js **
+
+function divisibleTriangleNumber(n) {
+   let triAngular = 0;
+   for (let i = 1; ; i++) {
+        triAngular += i;
+        let divisors = 0;
+
+        // Optimized divisor count
+        for (let j = 1; j * j <= triAngular; j++) {
+          if (triAngular % j === 0) {
+            divisors += 2; 
+            if (j * j === triAngular) 
+            divisors--;
+          }
+        }
+
+        if (divisors > n) {  
+          return triAngular;
+        }
+   }
+}
+
+ 
+divisibleTriangleNumber(500);
+
+** end of script.js **
+
