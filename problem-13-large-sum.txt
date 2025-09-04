@@ -1,0 +1,54 @@
+** start of script.js **
+
+function largeSum(arr) {
+    let carry = 0;
+    let sumDigits = [];
+    let length = arr[0].length;
+    let sumLength = 0;
+
+    // Step 1: Adding each column from right to left
+    for (let i = length - 1; i >= 0; i--) {
+        let columnSum = carry;
+        for (let k = 0; k < arr.length; k++) {
+            let digit = arr[k][i].charCodeAt(0) - 48; // ASCII to number
+            columnSum += digit;
+        }
+
+        sumDigits[sumLength] = columnSum % 10; // storing last digit
+        sumLength++;
+        carry = Math.floor(columnSum / 10); // remaining carry
+    }//End of for loop,received final sum in reversed order,last carry remains
+
+    // Step 2: Add remaining carry after all columns
+    while (carry > 0) {
+        sumDigits[sumLength] = carry % 10;
+        sumLength++;
+        carry = Math.floor(carry / 10);
+    }
+
+    // Step 3: Construct final sum string (reverse order)
+    let sumString = "";
+    for (let i = sumLength - 1; i >= 0; i--) {
+        sumString += sumDigits[i];
+    }
+
+    // Step 4: First 10 digits as number
+    let first10 = "";
+    for (let i = 0; i < 10; i++) {
+        first10 += sumString[i];
+    }
+
+    return Number(first10);
+}
+
+// Test mini-array
+const testNums = [
+  '37107287533902102798797998220837590246510135740250',
+  '46376937677490009712648124896970078050417018260538'
+];
+
+largeSum(testNums); 
+
+
+** end of script.js **
+
