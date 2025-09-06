@@ -1,0 +1,39 @@
+** start of script.js **
+
+function longestCollatzSequence(limit) {
+  let strtngNum=0;
+  let memo = {};
+  let maxLength=0;
+  let numberWithMax=0;
+    for(let i=limit;i>=1;i--){
+        let n = i;
+        let length=0;
+        while(n!==1){
+          if(memo[n]){
+            length+=memo[n];
+            break;
+          }
+          if(n % 2 === 0){
+            n = n / 2;
+          } else {
+            n = 3 * n + 1;
+          }
+          length++;
+        }
+        length++;//Adding the last 1
+
+        memo[i]=length;//Storing value in object as pairs(key:value)
+
+        if(length>maxLength){
+            maxLength = length;
+            numberWithMax=i;
+        }
+  
+    }  
+    return numberWithMax;
+    }  
+
+longestCollatzSequence(14);
+
+** end of script.js **
+
