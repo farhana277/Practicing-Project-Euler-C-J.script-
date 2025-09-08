@@ -1,0 +1,38 @@
+** start of script.js **
+
+ /* For large powers, Number(64-bit Floating Point, upto 16-17 digits) type can't hold all digits, so we store each digit in an array.This way we can handle carry properly and accurately sum all digits.*/
+
+
+function powerDigitSum(exponent) {
+    let digits = [1]; // start with 2^0 = 1
+
+    for (let i = 0; i < exponent; i++) {
+        let carry = 0;
+        for (let j = 0; j < digits.length; j++) {
+            let prod = digits[j] * 2 + carry; // multiply each digit by 2 + carry
+            digits[j] = prod % 10;           // keep last digit in place
+            carry = Math.floor(prod / 10);   // remaining carry
+        }
+        // if carry left, add new digits
+        while (carry > 0) {
+            digits.push(carry % 10);
+            carry = Math.floor(carry / 10);
+        }
+    }
+
+    // sum all digits
+    let sum = 0;
+    for (let d of digits) {
+        sum += d;
+    }
+
+    return sum;
+}
+
+// Example
+powerDigitSum(15);
+
+
+
+** end of script.js **
+
