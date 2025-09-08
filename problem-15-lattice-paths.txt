@@ -1,0 +1,24 @@
+** start of script.js **
+
+function latticePaths(gridSize) {
+  let n = gridSize;
+   const grid = []; //declaring empty array to store the grid values.
+   for(let i=0;i<=n;i++){
+     grid[i] = [];//In each outer loop, fixes the row's number
+     for(let j=0;j<=n;j++){
+       if(i===0||j===0){
+         grid[i][j]=1;//Assigning 1 in first row and column's value
+       }else{
+       grid[i][j]=grid[i-1][j]+grid[i][j-1];
+     }
+   }
+   }
+     return grid[n][n];
+}
+
+
+
+latticePaths(4);
+
+** end of script.js **
+
