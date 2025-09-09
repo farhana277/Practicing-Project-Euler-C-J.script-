@@ -1,0 +1,23 @@
+** start of script.js **
+
+// Only change code below this line
+class Thermostat{
+  constructor(parameter){
+     this.property = parameter;
+  }
+  get temperature(){
+    return 5 / 9 * (this.property - 32);
+  }
+  set temperature(celsius){
+    this.property = celsius * 9.0 / 5 + 32;
+  }
+}
+// Only change code above this line
+
+const thermos = new Thermostat(76); //Creating new object, sending Parameter
+let temp = thermos.temperature; //calling Getter converts 76°F → 24.44°C.
+thermos.temperature = 26; //Calling SETTER converts 26°C → 78.8°F internally
+temp = thermos.temperature; //Again Calling GETTER converts 78.8°F → 26°C
+
+** end of script.js **
+
