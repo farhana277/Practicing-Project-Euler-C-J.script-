@@ -1,5 +1,5 @@
 ** start of script.js **
-
+/*class ভিতরে সবসময় Fahrenheit track করে, user সবসময় Celsius-এ পড়তে ও write করতে পারে।*/
 // Only change code below this line
 class Thermostat{
   constructor(parameter){
