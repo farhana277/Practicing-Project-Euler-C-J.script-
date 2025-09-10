@@ -1,4 +1,5 @@
 ** start of script.js **
+** Code only works upto 1000 **
 
 function numberLetterCounts(limit) {
   const ones = [
