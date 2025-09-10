@@ -1,0 +1,47 @@
+** start of script.js **
+
+function numberLetterCounts(limit) {
+  const ones = [
+    "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+    "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
+    "seventeen", "eighteen", "nineteen"
+  ];
+
+  const tens = [
+    "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"
+  ];
+
+  let total = 0;
+
+  for (let n = 1; n <= limit; n++) {
+    let letters = 0;
+
+    if (n < 20) {
+      letters = ones[n].length;
+    } else if (n < 100) {
+      letters = tens[Math.floor(n / 10)].length + ones[n % 10].length;
+    } else if (n < 1000) {
+      letters = ones[Math.floor(n / 100)].length + "hundred".length;
+      if (n % 100 !== 0) letters += 3; // for "and"
+
+      let remainder = n % 100;
+      if (remainder < 20) {
+        letters += ones[remainder].length;
+      } else {
+        letters += tens[Math.floor(remainder / 10)].length + ones[remainder % 10].length;
+      }
+    } else if (n === 1000) {
+      letters = "onethousand".length;
+    }
+
+    total += letters;
+  }
+
+  return total;
+}
+
+numberLetterCounts(5);
+
+
+** end of script.js **
+
