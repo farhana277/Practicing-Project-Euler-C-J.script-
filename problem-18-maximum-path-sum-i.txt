@@ -1,0 +1,27 @@
+** start of script.js **
+
+/*এটাতে আমি শুধু রিকার্সিভ ব্রুট ফোর্স ব্যবহার করেছি,বড় ট্রাইএঙ্গেল হলে তা কাজ করবে না, প্রশ্ন নম্বর ৬৭ এ খেয়াল করো*/
+
+
+function maximumPathSumI(triangle) {
+  function maxPathSum(row = 0, col = 0) {
+    // base case: last row
+    if (row === triangle.length - 1) {
+      return triangle[row][col];
+    }
+
+    // left and right child
+    const left = maxPathSum(row + 1, col);
+    const right = maxPathSum(row + 1, col + 1);
+
+    // return current + max of children
+    return triangle[row][col] + Math.max(left, right);
+  }
+
+  // start from top of the triangle
+  return maxPathSum();
+}
+
+
+** end of script.js **
+
