@@ -1,0 +1,30 @@
+** start of script.js **
+
+/* Check Euler Problem No : 16, similar approach */
+
+function sumFactorialDigits(n) {
+  let sum = 0;
+let arr = [1];
+for(let i=2;i<=n;i++){
+  let carry =0;
+  for(let j =0;j < arr.length;j++){
+    let prod = arr[j]*i + carry;
+    arr[j] = prod % 10;
+    carry = Math.floor(prod/10);
+  }
+  while(carry>0){
+    arr.push(carry % 10);
+    carry = Math.floor(carry/10);
+  }
+}
+//sum of the digits
+  for(let d of arr){
+    sum +=d;
+  }
+  return sum;
+}
+
+sumFactorialDigits(100);
+
+** end of script.js **
+
